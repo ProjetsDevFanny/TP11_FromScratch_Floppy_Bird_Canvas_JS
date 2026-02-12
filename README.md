@@ -25,19 +25,19 @@ Bienvenue dans ma version personnalisée de **Flappy Bird**, développée de A �
 
 ## Aperçu
 
-![Flappy Bird Preview](Screen%20Shot_Floppy%20Bird.pdf)
+![Flappy Bird Preview](Screen%20Shot2_Floppy%20Bird.png)
 
 ## Demo animée
 
-https://projetsdevfanny.github.io/Floppy_Bird/
+https://projetsdevfanny.github.io/TP11_FromScratch_Floppy_Bird_Canvas_JS/
 
 ## Lancer le jeu
 
 1. Clone ce repo :
 
    ```bash
-   git clone git@github.com:ProjetsDevFanny/Floppy_Bird.git (SSH)
-   ou git clone https://github.com/ProjetsDevFanny/Floppy_Bird.git (HTTPS)
+   git clone git@github.com:ProjetsDevFanny/TP11_FromScratch_Floppy_Bird_Canvas_JS.git (SSH)
+   ou git clone https://github.com/ProjetsDevFanny/TP11_FromScratch_Floppy_Bird_Canvas_JS.git (HTTPS)
 
    ```
 
