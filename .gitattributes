@@ -1,6 +1,14 @@
 # Force LF (Unix) pour tous les fichiers texte
 * text eol=lf
 
+# Fichiers binaires (ne pas modifier les fins de ligne)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.mp3  binary
+*.pdf  binary
+
 # Force CRLF (Windows) pour les fichiers batch
 *.bat text eol=crlf
 
