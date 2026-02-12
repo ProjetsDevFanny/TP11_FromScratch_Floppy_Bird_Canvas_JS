@@ -110,8 +110,16 @@ bgMusic.volume = 0.3; // Volume adapté pour une ambiance
 //--------------------------EVENTSLISTENERS-----------------------------------
 
 // Passage à l'écran du jeu, au clic sur la page d'accueil
-document.addEventListener("click", () => {
+
+const eventsStartGame = [
+  "click",
+  "keydown",
+];
+
+eventsStartGame.forEach(event => {
+document.addEventListener(event, function(event) {
   console.log("jeu lancé!");
+  console.log(`Événement ${event.type} déclenché`);
   if (gameState === "welcome") {
     gameState = "play";
     gameStartedClick = true;
@@ -126,7 +134,8 @@ document.addEventListener("click", () => {
       console.warn("Impossible de lancer la musique :", err);
     });
     console.log("jeu lancé!");
-  }
+  };
+});
 });
 
 // Commencement du jeu, quand on appuie sur la flèche du haut ou sur la flèche du bas
@@ -196,9 +205,14 @@ function animate() {
       canvas.height / 2 - 150
     );
     ctx.fillText(
-      "Cliquez pour jouer",
+      "Pour jouer, cliquez,",
       canvas.width / 2,
       canvas.height / 2 + 100
+    );    
+    ctx.fillText(
+     "ou pressez sur une touche.",
+      canvas.width / 2,
+      canvas.height / 1.8 + 100   
     );
 
     // ---On commence le jeu = dessin et positionnement des tuyaux-------
