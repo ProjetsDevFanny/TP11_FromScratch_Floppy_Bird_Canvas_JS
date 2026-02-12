@@ -14,7 +14,7 @@ header {
   width: 751px;
 }
 h1 {
-  background: url(media/background.png) 0% 420px;
+  background: url(assets/background.png) 0% 420px;
   /* background-position: center; */
   background-size: cover; 
   padding: 1.2rem 0;
