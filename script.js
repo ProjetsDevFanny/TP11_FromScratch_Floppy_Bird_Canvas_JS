@@ -1,5 +1,5 @@
 
-console.log("Script chargé");
+// console.log("Script chargé");
 
 // ----------------DEFINITION DU CONTEXTE CANVAS 2D-----
 
@@ -121,8 +121,8 @@ const eventsStartGame = [
 
 eventsStartGame.forEach(event => {
 document.addEventListener(event, function(event) {
-  console.log("jeu lancé!");
-  console.log(`Événement ${event.type} déclenché`);
+  // console.log("jeu lancé!");
+  // console.log(`Événement ${event.type} déclenché`);
   if (gameState === "welcome") {
     gameState = "play";
     gameStartedClick = true;
@@ -136,7 +136,7 @@ document.addEventListener(event, function(event) {
     bgMusic.play().catch((err) => {
       console.warn("Impossible de lancer la musique :", err);
     });
-    console.log("jeu lancé!");
+    // console.log("jeu lancé!");
   };
 });
 });
@@ -175,7 +175,7 @@ function scoreDisplay() {
 // ------FONCTION PRINCIPALE: ANIMATION DES ELEMENTS DU JEU----------------
 
 function animate() {
-  console.log("animate tourne");
+  // console.log("animate tourne");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // -----Page d'accueil affichée-----
@@ -422,34 +422,41 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-// -----FONCTION DE LANCEMENT DU JEU----------------
+// ----- LANCEMENT SIMPLE ET FIABLE (fonctionne mieux pour le lancement en production)-----
+window.addEventListener("load", () => {
+  requestAnimationFrame(animate);
+});
+
+// -----FONCTION DE LANCEMENT DU JEU 
+// (en mode de développement avant correction pour le lancement en production)
+// --------------------------------------------------------------
 
 // Fonction de la page d'accueil
-function loadWelcomePage() {
-  sprite.onload = () => {
-    // Démarre l'animation de la page d'accueil puis du jeu
-    // console.log("Image sprite chargée, lancement de l'animation.");
-    requestAnimationFrame(animate);
-  };
-}
+// function loadWelcomePage() {
+//   sprite.onload = () => {
+//     // Démarre l'animation de la page d'accueil puis du jeu
+//     // console.log("Image sprite chargée, lancement de l'animation.");
+//     requestAnimationFrame(animate);
+//   };
+// }
 
-// Lancement de la page d'accueil
-loadWelcomePage();
+// // Lancement de la page d'accueil
+// loadWelcomePage();
 
 // Fonction de lancement du jeu
-function startGame() {
-  // Initialisation et démarrage du jeu
-  // console.log("Démarrage du jeu..."); // TEST
-  sprite.onload = () => {
-    console.log("Image sprite chargée, lancement de l'animation.");
-    requestAnimationFrame(animate); // Démarre l'animation du jeu
-  };
+// function startGame() {
+//   // Initialisation et démarrage du jeu
+//   // console.log("Démarrage du jeu..."); // TEST
+//   sprite.onload = () => {
+//     console.log("Image sprite chargée, lancement de l'animation.");
+//     requestAnimationFrame(animate); // Démarre l'animation du jeu
+//   };
 
   // Vérification du chargement de l'image
-  if (sprite.complete) {
-    console.log("Image sprite déjà chargée");
-    requestAnimationFrame(animate);
-  } else {
-    console.log("En attente du chargement de l'image sprite");
-  }
-}
+//   if (sprite.complete) {
+//     console.log("Image sprite déjà chargée");
+//     requestAnimationFrame(animate);
+//   } else {
+//     console.log("En attente du chargement de l'image sprite");
+//   }
+// }
