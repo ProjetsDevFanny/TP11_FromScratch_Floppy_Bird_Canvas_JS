@@ -11,17 +11,17 @@ const ctx = canvas.getContext("2d");
 
 // Méthode 1 = découpe dans GIMP (pour bird)
 const birdDown = new Image();
-birdDown.src = "./assets/bird_down.png";
+birdDown.src = "./assets/bird_down.webp";
 
 const birdMiddle = new Image();
-birdMiddle.src = "./assets/bird_middle.png";
+birdMiddle.src = "./assets/bird_middle.webp";
 
 const birdUp = new Image();
-birdUp.src = "./assets/bird_up.png";
+birdUp.src = "./assets/bird_up.webp";
 
 // Méthode2 = spritesheet (Pour le fond et les tuyaux) )
 const sprite = new Image();
-sprite.src = "./assets/flappy-bird-set.png";
+sprite.src = "./assets/flappy-bird-set.webp";
 
 // ---------------VARIABLES -----------------
 
