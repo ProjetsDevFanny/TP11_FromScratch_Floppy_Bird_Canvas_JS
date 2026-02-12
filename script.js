@@ -1,3 +1,6 @@
+
+console.log("Script chargé");
+
 // ----------------DEFINITION DU CONTEXTE CANVAS 2D-----
 
 const canvas = document.getElementById("canvas");
@@ -8,17 +11,17 @@ const ctx = canvas.getContext("2d");
 
 // Méthode 1 = découpe dans GIMP (pour bird)
 const birdDown = new Image();
-birdDown.src = "media/bird_down.png";
+birdDown.src = "./media/bird_down.png";
 
 const birdMiddle = new Image();
-birdMiddle.src = "media/bird_middle.png";
+birdMiddle.src = "./media/bird_middle.png";
 
 const birdUp = new Image();
-birdUp.src = "media/bird_up.png";
+birdUp.src = "./media/bird_up.png";
 
 // Méthode2 = spritesheet (Pour le fond et les tuyaux) )
 const sprite = new Image();
-sprite.src = "media/flappy-bird-set.png";
+sprite.src = "./media/flappy-bird-set.png";
 
 // ---------------VARIABLES -----------------
 
@@ -91,19 +94,19 @@ bestScore = parseInt(bestScore); // Initialisation de l'affichage du meilleur sc
 //--------------------Variables SONORES---------------------
 
 // Son lors d'un passage entre 2 tuyaux
-const ringWin = new Audio("media/win.mp3");
+const ringWin = new Audio("./media/win.mp3");
 ringWin.volume = 0.5;
 
 // Son lors d'un crash sur un tuyau
-const ringLoose = new Audio("media/loose.mp3");
+const ringLoose = new Audio("./media/loose.mp3");
 ringLoose.volume = 0.6;
 
 // Son lors de la chute de l'oiseau
-const ringFall = new Audio("media/falling2.mp3");
+const ringFall = new Audio("./media/falling2.mp3");
 ringFall.volume = 0.2;
 
 // Son de l'ambiance du jeu
-const bgMusic = new Audio("media/game_sound.mp3");
+const bgMusic = new Audio("./media/game_sound.mp3");
 bgMusic.loop = true; // Pour que la musique tourne en boucle
 bgMusic.volume = 0.3; // Volume adapté pour une ambiance
 
@@ -172,6 +175,7 @@ function scoreDisplay() {
 // ------FONCTION PRINCIPALE: ANIMATION DES ELEMENTS DU JEU----------------
 
 function animate() {
+  console.log("animate tourne");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // -----Page d'accueil affichée-----
